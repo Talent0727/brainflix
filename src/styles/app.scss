@@ -1,0 +1,38 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/fonts";
+
+* {
+  margin: 0;
+  padding: 0;
+  // font-family: "AvenirRegular";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navbar {
+  @include flex-row;
+  justify-content: space-between;
+  align-items: center;
+  &__searchArea {
+    @include flex-row;
+  }
+  &__searchForm {
+    @include flex-row;
+  }
+  &__aviPhoto {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+.header {
+  background: black;
+  @include flex-row;
+  justify-content: center;
+}
