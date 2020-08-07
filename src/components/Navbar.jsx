@@ -6,24 +6,30 @@ import aviPhoto from "../assets/images/Mohan-muruge.jpg";
 const Navbar = () => {
   return (
     <section className="navbar">
-      <img src={logo} alt="brainflix logo" />
+      <img className="navbar__logo" src={logo} alt="brainflix logo" />
       <div className="navbar__searchArea">
         <form
           id="navbarSearchForm"
-          class="navbar__searchForm"
+          className="navbar__searchForm"
           action=""
           method="post"
         >
           <input
-            className="navbar__search"
+            className="navbar__searchInput"
             type="text"
             name="navbarSearchInput"
             required="required"
             placeholder="Search"
           />
-          <Btn btnText="+ UPLOAD" />
+          <div className="navbar__subcontainer">
+            <Btn btnText="+ UPLOAD" />
+            <img
+              className="navbar__aviPhoto"
+              src={aviPhoto}
+              alt="Mohan Muruge's"
+            />
+          </div>
         </form>
-        <img className="navbar__aviPhoto" src={aviPhoto} alt="Mohan Muruge's" />
       </div>
     </section>
   );
