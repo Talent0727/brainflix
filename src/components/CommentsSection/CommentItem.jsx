@@ -1,19 +1,16 @@
 import React from "react";
 
-function CommentItem(props) {
+function CommentItem({ id, image, name, date, text }) {
+  const formattedTime = new Date(date).toLocaleDateString();
   return (
-    <div className="comments__comment">
-      <img
-        className="comments__commentImage"
-        src={props.commentData.image}
-        alt=""
-      />
+    <div className="comments__comment" id={id}>
+      <img className="comments__commentImage" src={image} alt="" />
 
       <div className="comments__commentTitle">
-        <h3 className="comments__commentAuthor">{props.commentData.author}</h3>
-        <h4 className="comments__commentDate">{props.commentData.date}</h4>
+        <h3 className="comments__commentAuthor">{name}</h3>
+        <h4 className="comments__commentDate">{formattedTime}</h4>
       </div>
-      <p className="comments__commentText">{props.commentData.text}</p>
+      <p className="comments__commentText">{text}</p>
     </div>
   );
 }

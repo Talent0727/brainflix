@@ -1,8 +1,7 @@
 import React from "react";
-import Btn from "../Btn";
 import aviPhoto from "../../assets/images/Mohan-muruge.jpg";
 
-function NewComment() {
+function NewComment({ submitMessage }) {
   return (
     <div className="newComment">
       <img
@@ -10,18 +9,21 @@ function NewComment() {
         src={aviPhoto}
         alt="Mohan Muruge's"
       />
-      <form className="newComment__form" action="" method="post">
+      <form className="newComment__form" onSubmit={submitMessage}>
         <label className="newComment__label" htmlFor="">
           JOIN THE CONVERSATION
         </label>
         <textarea
           className="newComment__input"
-          name=""
+          name="message"
           id=""
+          placeholder="Write comment here"
           cols="30"
           rows="10"
         ></textarea>
-        <Btn btnText="COMMENT" />
+        <button className="btn" type="submit">
+          COMMENT
+        </button>
       </form>
     </div>
   );
