@@ -1,7 +1,12 @@
 import React from "react";
+import moment from "moment";
+
+moment().format();
 
 function CommentItem({ id, image, name, date, text }) {
-  const formattedTime = new Date(date).toLocaleDateString();
+  // const formattedTime = new Date(date).toLocaleDateString();
+  const formattedTime = moment(date).fromNow();
+
   return (
     <div className="comments__comment" id={id}>
       <img className="comments__commentImage" src={image} alt="" />

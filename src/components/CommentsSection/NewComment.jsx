@@ -9,13 +9,12 @@ function NewComment({ submitMessage }) {
         <img
           className="newComment__aviPhoto"
           src={aviPhoto}
-          alt="Mohan Muruge's"
+          alt="Mohan Muruge"
         />
         <form className="newComment__form" onSubmit={submitMessage}>
           <textarea
             className="newComment__input"
             name="message"
-            id=""
             placeholder="Write comment here"
             cols="30"
             rows="10"

@@ -1,11 +1,15 @@
 import React from "react";
 import IconViews from "../assets/icons/SVG/Icon-views.svg";
 import IconLikes from "../assets/icons/SVG/Icon-likes.svg";
+import moment from "moment";
+
+moment().format();
 
 function Description(props) {
   // console.log(props.activeVideo);
+  const formattedTime = moment(props.mainVideo.date).fromNow();
 
-  const formattedTime = new Date(props.mainVideo.date).toLocaleDateString();
+  // const formattedTime = new Date(props.mainVideo.date).toLocaleDateString();
   return (
     <div className="description">
       <h1 className="description__title">{props.mainVideo.title}</h1>
