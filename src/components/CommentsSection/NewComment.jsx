@@ -20,7 +20,7 @@ function NewComment({ submitMessage }) {
             cols="30"
             rows="10"
           ></textarea>
-          <button className="btn" type="submit">
+          <button className="newComment__btn" type="submit">
             COMMENT
           </button>
         </form>

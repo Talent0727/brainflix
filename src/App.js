@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Navbar from "./components/Navbar";
+import VideoPlayer from "./components/VideoPlayer.jsx";
 import Description from "./components/Description";
 import NewComment from "./components/CommentsSection/NewComment.jsx";
 import CommentsSection from "./components/CommentsSection/CommentsSection";
@@ -120,9 +121,9 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-
+        <VideoPlayer mainVideo={this.state.activeVideo} />
         <div className="bottom">
-          <div>
+          <div className="descriptionAndForm">
             <Description mainVideo={this.state.activeVideo} />
             <NewComment submitMessage={this.submitMessage} />
             <CommentsSection comments={this.state.activeVideo.comments} />

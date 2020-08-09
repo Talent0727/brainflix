@@ -4,7 +4,7 @@
     @include flex-row;
     margin-top: 1.5rem;
     padding-bottom: 1.5rem;
-    border-bottom: 1.5px solid $mercury;
+    border-bottom: 0.094rem solid $mercury;
   }
   &__commentImage {
     background-color: $silver;
@@ -13,7 +13,7 @@
     border-radius: 50%;
   }
   &__commentData {
-    width: 236px;
+    width: 14.75rem;
     margin-left: 1rem;
   }
   &__commentTitle {
@@ -32,5 +32,40 @@
   }
   &__commentText {
     font-size: 0.87rem;
+  }
+}
+
+@include tablet {
+  .comments {
+    padding: 0 1.5rem;
+    &__commentImage {
+      height: 3.125rem;
+      width: 3.125rem;
+    }
+    &__commentTitle {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+    &__commentAuthor {
+      margin-right: 1.5rem;
+    }
+    &__commentData {
+      width: 39rem;
+    }
+    &__commentText {
+      line-height: 1.3rem;
+    }
+  }
+}
+
+@include desktop {
+  .comments {
+    padding: 0;
+
+    &__commentTitle {
+      margin-bottom: 0.5rem;
+    }
   }
 }

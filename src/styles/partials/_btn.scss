@@ -1,11 +1,11 @@
 .btn {
   @include button-style;
-  margin-right: 16px;
+  margin-right: 1rem;
 }
 
 @include tablet {
   .btn {
-    width: 120px;
+    width: 7.5rem;
     margin: 0;
   }
 }

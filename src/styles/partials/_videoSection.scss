@@ -10,19 +10,35 @@
     margin-top: 2.5rem;
   }
   &__videoImage {
-    width: 120px;
-    height: 70px;
-    border-radius: 5px;
+    width: 7.5rem;
+    height: 4.375rem;
+    border-radius: 0.313rem;
+    object-fit: cover;
   }
   &__videoSideInfo {
     margin-left: 1rem;
   }
   &__videoTitle {
     margin-bottom: 1rem;
-    width: 150px;
+    width: 9.375rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+}
+
+@include tablet {
+  .videos {
+    padding: 2.5rem 1.5rem;
+    border-left: 2px solid $mercury;
+
+    &__videoTitle {
+      width: 11.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: visible;
+    }
   }
 }

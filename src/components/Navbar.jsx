@@ -15,7 +15,7 @@ const Navbar = () => {
           action=""
           method="post"
         >
-          <label for="navbar__searchInput" className="navbar__searchIcon">
+          <label htmlFor="navbar__searchInput" className="navbar__searchIcon">
             <img src={SearchIcon} alt="search icon" />
           </label>
           <input
