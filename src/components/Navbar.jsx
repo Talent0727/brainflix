@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../assets/logos/Logo-brainflix.svg";
 import Btn from "./Btn";
 import aviPhoto from "../assets/images/Mohan-muruge.jpg";
+import SearchIcon from "../assets/icons/SVG/Icon-search.svg";
 
 const Navbar = () => {
   return (
@@ -14,6 +15,9 @@ const Navbar = () => {
           action=""
           method="post"
         >
+          <label for="navbar__searchInput" className="navbar__searchIcon">
+            <img src={SearchIcon} alt="search icon" />
+          </label>
           <input
             className="navbar__searchInput"
             type="text"

@@ -8,8 +8,10 @@ function VideoItem(props) {
         src={props.videoData.image}
         alt="video"
       />
-      <h3 className="videos__videoTitle">{props.videoData.title}</h3>
-      <p className="videos__videoChannel">{props.videoData.channel}</p>
+      <div className="videos__videoSideInfo">
+        <h4 className="videos__videoTitle">{props.videoData.title}</h4>
+        <p className="videos__videoChannel">{props.videoData.channel}</p>
+      </div>
     </li>
   );
 }

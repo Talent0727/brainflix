@@ -1,0 +1,56 @@
+.newComment {
+  @include flex-column;
+  border-bottom: 1.5px solid $mercury;
+  margin: 2rem 1rem 0 1rem;
+  padding-bottom: 1.5rem;
+  &__container {
+    @include flex-row;
+  }
+  &__aviPhoto {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    // margin-top: 1.25rem;
+  }
+  &__form {
+    @include flex-column;
+    width: 222px;
+    margin-left: 1rem;
+  }
+  &__label {
+    @include h5-labels;
+    font-family: "AvenirDemi";
+    color: $silver;
+    letter-spacing: -0.3px;
+    margin-left: 4.2rem;
+  }
+  &__input {
+    width: 216px;
+    height: 86px;
+    border: 2px solid $mercury;
+    background-color: $alabaster;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+}
+
+@include tablet {
+  .newComment {
+    &__container {
+      justify-content: space-between;
+    }
+    &__form {
+      @include flex-row;
+      justify-content: space-between;
+      width: 616px;
+    }
+    &__label {
+      margin-left: 6rem;
+    }
+    &__input {
+      width: 440px;
+      height: 45px;
+      margin: 0 1rem 0 0;
+    }
+  }
+}

@@ -69,7 +69,8 @@ class App extends Component {
         "On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
       views: "1,001,023",
       likes: "110,985",
-      video: "/src/assets/videos/BrainStation Sample Video.mp4",
+      video:
+        "https://ia800701.us.archive.org/26/items/SampleVideo1280x7205mb/SampleVideo_1280x720_5mb.mp4",
       comments: [
         {
           id: 100001,
@@ -77,7 +78,7 @@ class App extends Component {
           name: "Micheal Lyons",
           date: new Date("12/18/2018"),
           text:
-            "They BLEW the ROOF off at their last show, once everyone started figuring out they were going.This is still simply the greatest opening of a concert I have EVER witnessed.",
+            "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.",
         },
         {
           id: 100002,

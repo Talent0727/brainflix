@@ -1,0 +1,36 @@
+.comments {
+  padding: 0 1rem;
+  &__comment {
+    @include flex-row;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1.5px solid $mercury;
+  }
+  &__commentImage {
+    background-color: $silver;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+  &__commentData {
+    width: 236px;
+    margin-left: 1rem;
+  }
+  &__commentTitle {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  &__commentAuthor {
+    @include h3-subheader;
+  }
+  &__commentDate {
+    @include h4-lists-mob;
+    font-size: 0.9rem;
+    color: $silver;
+  }
+  &__commentText {
+    font-size: 0.87rem;
+  }
+}

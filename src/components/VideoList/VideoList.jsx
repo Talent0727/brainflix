@@ -5,7 +5,8 @@ function VideoList(props) {
   // console.log("VideoList props", props.videos);
 
   return (
-    <ul className="videoList">
+    <ul className="videos">
+      NEXT VIDEO
       {props.videos.map((video) => (
         <VideoItem key={video.id} videoData={video} />
       ))}

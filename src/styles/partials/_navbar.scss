@@ -1,0 +1,67 @@
+.navbar {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  &__logo {
+    height: 28px;
+  }
+  &__searchArea {
+    @include flex-column;
+    margin-top: 20px;
+  }
+  &__searchForm {
+    @include flex-column;
+    position: relative;
+  }
+  &__searchIcon {
+    position: absolute;
+    left: 0.5rem;
+    top: 1rem;
+  }
+
+  &__subcontainer {
+    @include flex-row;
+    justify-content: center;
+  }
+  &__searchInput {
+    height: 45px;
+    background-color: $alabaster;
+    border: 1px solid $silver;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding-left: 2rem;
+  }
+  &__aviPhoto {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
+
+@include tablet {
+  .navbar {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    // padding: 0 1.5rem;
+    &__logo {
+      margin-right: 169px;
+      margin-left: 1.5rem;
+    }
+    &__searchArea {
+      @include flex-row;
+      margin-right: 1.5rem;
+      margin-top: 0;
+    }
+    &__searchForm {
+      @include flex-row;
+      // margin-right: 1.5rem;
+    }
+    &__searchInput {
+      width: 180px;
+      margin-right: 1.5rem;
+    }
+  }
+}
