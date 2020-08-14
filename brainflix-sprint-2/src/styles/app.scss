@@ -1,0 +1,32 @@
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/fonts";
+@import "./partials/navbar";
+@import "./partials/description";
+@import "./partials/newComment";
+@import "./partials/postedComments";
+@import "./partials/videoSection";
+@import "./partials/btn";
+@import "./partials/videoPlayer";
+@import "./partials/videoUploadPage";
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "AvenirRegular";
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+@include desktop {
+  .bottom {
+    @include flex-row;
+    justify-content: center;
+  }
+}
+
+@include placeholder-color;

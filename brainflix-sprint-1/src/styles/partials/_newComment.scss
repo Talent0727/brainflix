@@ -1,0 +1,77 @@
+.newComment {
+  @include flex-column;
+  border-bottom: 0.094rem solid $mercury;
+  margin: 2rem 1rem 0 1rem;
+  padding-bottom: 1.5rem;
+  &__container {
+    @include flex-row;
+  }
+  &__aviPhoto {
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 50%;
+    // margin-top: 1.25rem;
+  }
+  &__form {
+    @include flex-column;
+    width: 13.875rem;
+    margin-left: 1rem;
+  }
+  &__label {
+    @include h5-labels;
+    font-family: "AvenirDemi";
+    color: $silver;
+    letter-spacing: -0.019rem;
+    margin-left: 4.2rem;
+  }
+  &__input {
+    width: 13.5rem;
+    height: 5.375rem;
+    border: 0.125rem solid $mercury;
+    background-color: $alabaster;
+    border-radius: 0.313rem;
+    margin-bottom: 1rem;
+  }
+  &__btn {
+    @include button-style;
+    width: 13.75rem;
+  }
+}
+
+@include tablet {
+  .newComment {
+    margin: 2rem 1.5rem 0 1.5rem;
+    &__container {
+      justify-content: flex-start;
+    }
+    &__aviPhoto {
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+    &__form {
+      @include flex-row;
+      margin-left: 0;
+      width: 38.5rem;
+    }
+    &__label {
+      margin-left: 4.8rem;
+    }
+    &__input {
+      width: 27.5rem;
+      height: 2.813rem;
+      margin: 0 1rem 0 1rem;
+      padding: 0.15rem 0 0 0.5rem;
+    }
+    &__btn {
+      @include button-style;
+      width: 10rem;
+    }
+  }
+}
+
+@include desktop {
+  .newComment {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,44 @@
+.videos {
+  @include h4-lists-mob;
+  font-family: "AvenirDemi";
+  font-size: 0.87rem;
+  color: $silver;
+  padding: 2.5rem 1rem;
+  &__video {
+    @include flex-row;
+    color: $black;
+    margin-top: 2.5rem;
+  }
+  &__videoImage {
+    width: 7.5rem;
+    height: 4.375rem;
+    border-radius: 0.313rem;
+    object-fit: cover;
+  }
+  &__videoSideInfo {
+    margin-left: 1rem;
+  }
+  &__videoTitle {
+    margin-bottom: 1rem;
+    width: 9.375rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@include tablet {
+  .videos {
+    padding: 2.5rem 1.5rem;
+    border-left: 2px solid $mercury;
+
+    &__videoTitle {
+      width: 11.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: visible;
+    }
+  }
+}

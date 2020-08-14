@@ -1,0 +1,81 @@
+.navbar {
+  @include flex-column;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+  &__logo {
+    height: 1.75rem;
+  }
+  &__searchArea {
+    @include flex-column;
+    margin-top: 1.25rem;
+  }
+  &__searchForm {
+    @include flex-column;
+    position: relative;
+  }
+  &__searchIcon {
+    position: absolute;
+    left: 0.5rem;
+    top: 1rem;
+  }
+
+  &__subcontainer {
+    @include flex-row;
+    justify-content: center;
+  }
+  &__searchInput {
+    height: 2.813rem;
+    background-color: $alabaster;
+    border: 0.063rem solid $silver;
+    border-radius: 0.313rem;
+    margin-bottom: 0.5rem;
+    padding-left: 2rem;
+  }
+  &__aviPhoto {
+    height: 3.125rem;
+    width: 3.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left center;
+  }
+}
+
+@include tablet {
+  .navbar {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+    height: 5rem;
+    &__logo {
+      margin-right: 10.563rem;
+      margin-left: 1.5rem;
+    }
+    &__searchArea {
+      @include flex-row;
+      margin-right: 1.5rem;
+      margin-top: 0;
+    }
+    &__searchForm {
+      @include flex-row;
+    }
+    &__searchInput {
+      width: 11.25rem;
+      margin-right: 1.5rem;
+    }
+    &__aviPhoto {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+@include desktop {
+  .navbar {
+    &__logo {
+      margin-left: 10rem;
+    }
+    &__searchArea {
+      margin-right: 10rem;
+    }
+  }
+}

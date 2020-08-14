@@ -1,0 +1,71 @@
+.comments {
+  padding: 0 1rem;
+  &__comment {
+    @include flex-row;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.094rem solid $mercury;
+  }
+  &__commentImage {
+    background-color: $silver;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+  &__commentData {
+    width: 14.75rem;
+    margin-left: 1rem;
+  }
+  &__commentTitle {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  &__commentAuthor {
+    @include h3-subheader;
+  }
+  &__commentDate {
+    @include h4-lists-mob;
+    font-size: 0.9rem;
+    color: $silver;
+  }
+  &__commentText {
+    font-size: 0.87rem;
+  }
+}
+
+@include tablet {
+  .comments {
+    padding: 0 1.5rem;
+    &__commentImage {
+      height: 3.125rem;
+      width: 3.125rem;
+    }
+    &__commentTitle {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+    &__commentAuthor {
+      margin-right: 1.5rem;
+    }
+    &__commentData {
+      width: 39rem;
+    }
+    &__commentText {
+      line-height: 1.3rem;
+    }
+  }
+}
+
+@include desktop {
+  .comments {
+    padding: 0;
+
+    &__commentTitle {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
