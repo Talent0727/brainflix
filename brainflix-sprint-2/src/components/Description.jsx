@@ -17,19 +17,27 @@ class Description extends Component {
       <div className="description">
         <h1 className="description__title">{title}</h1>
         <div className="description__subtitle">
-          <div className="description__subtitleTopRow">
-            <h3 className="description__subtitleChannel">By {channel}</h3>
-            <p className="description__subtitleDate">{formattedTime}</p>
+          <div className="description__subtitle-topRow">
+            <h3 className="description__subtitle-channel">By {channel}</h3>
+            <p className="description__subtitle-date">{formattedTime}</p>
           </div>
-          <div className="description__subtitleBottomRow">
-            <img className="description__subtitleIcon" src={IconViews} alt="" />
-            <p className="description__subtitleNumbers">{views}</p>
-            <img className="description__subtitleIcon" src={IconLikes} alt="" />
-            <p className="description__subtitleNumbers">{likes}</p>
+          <div className="description__subtitle-bottomRow">
+            <img
+              className="description__subtitle-icon"
+              src={IconViews}
+              alt=""
+            />
+            <p className="description__subtitle-numbers">{views}</p>
+            <img
+              className="description__subtitle-icon"
+              src={IconLikes}
+              alt=""
+            />
+            <p className="description__subtitle-numbers">{likes}</p>
           </div>
         </div>
         <p className="description__text">{description}</p>
-        <h4 className="description__numberOfComments">3 Comments</h4>
+        <h4 className="description__number-comments">3 Comments</h4>
       </div>
     );
   }

@@ -1,31 +1,36 @@
-.newComment {
+.new-comment {
   @include flex-column;
-  border-bottom: 0.094rem solid $mercury;
-  margin: 2rem 1rem 0 1rem;
-  padding-bottom: 1.5rem;
+  justify-content: flex-start;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0 1rem;
+
   &__container {
     @include flex-row;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.07rem solid $mercury;
   }
-  &__aviPhoto {
-    height: 3.125rem;
-    width: 3.125rem;
+  &__avi-photo {
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
-    // margin-top: 1.25rem;
+    object-fit: cover;
+    object-position: left center;
   }
   &__form {
     @include flex-column;
-    width: 13.875rem;
     margin-left: 1rem;
+    width: 76%;
   }
   &__label {
     @include h5-labels;
+    align-self: flex-start;
     font-family: "AvenirDemi";
     color: $silver;
     letter-spacing: -0.019rem;
     margin-left: 4.2rem;
   }
   &__input {
-    width: 13.5rem;
+    padding: 0.5rem 0.5rem 0 0.5rem;
     height: 5.375rem;
     border: 0.125rem solid $mercury;
     background-color: $alabaster;
@@ -39,28 +44,27 @@
 }
 
 @include tablet {
-  .newComment {
-    margin: 2rem 1.5rem 0 1.5rem;
+  .new-comment {
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
     &__container {
-      justify-content: flex-start;
+      padding-bottom: 0.5rem;
     }
-    &__aviPhoto {
-      width: 3.75rem;
-      height: 3.75rem;
+    &__avi-photo {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-left: 0;
     }
     &__form {
       @include flex-row;
-      margin-left: 0;
-      width: 38.5rem;
     }
     &__label {
-      margin-left: 4.1rem;
+      margin-left: 4.2rem;
     }
     &__input {
       width: 27.5rem;
-      height: 2.813rem;
-      margin: 0 1rem 0 1rem;
-      padding: 0.15rem 0 0 0.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
     }
     &__btn {
       @include button-style;
@@ -70,8 +74,26 @@
 }
 
 @include desktop {
-  .newComment {
-    margin-left: 0;
+  .new-comment {
+    margin-left: 10rem;
+    padding-right: 0;
+    &__input {
+      width: 20rem;
+    }
+  }
+}
+
+@include wide {
+  .new-comment {
+    margin-left: 10rem;
     margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    &__form {
+      width: 90%;
+    }
+    &__input {
+      width: 27.5rem;
+    }
   }
 }

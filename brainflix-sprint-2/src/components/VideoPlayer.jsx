@@ -5,35 +5,48 @@ import VolumeIcon from "../assets/icons/SVG/Icon-volume.svg";
 
 class VideoPlayer extends Component {
   render() {
-    const { image, video } = this.props.mainVideo;
+    const { image } = this.props.mainVideo;
 
     return (
       <>
-        <div className="mainVideo__videoPlayer">
-          <div className="mainVideo__videoControls">
-            <button className="mainVideo__videoBtn">
-              <img src={PlayIcon} alt="play icon" />
+        <div className="main-video__video-player">
+          <div className="main-video__video-controls">
+            <button className="main-video__btn-play">
+              <img
+                className="main-video__btn-playImg"
+                src={PlayIcon}
+                alt="play icon"
+              />
             </button>
-            <div className="mainVideo__videoProgress-bar">
-              <div className="mainVideo__videoProgress-timeline">
-                <div className="mainVideo__videoProgress-scrubber"></div>
+            <div className="main-video__progress-bar">
+              <div className="main-video__progress-timeline">
+                <div className="main-video__progress-scrubber"></div>
               </div>
-              <div className="mainVideo__videoProgress-text">0:00 / 0:42</div>
+              <div className="main-video__progress-text">0:00 / 0:42</div>
             </div>
-            <div className="mainVideo__videoBtn-group">
-              <button className="mainVideo__videoBtn">
-                <img src={ExpandIcon} alt="expand icon" />
+            <div className="main-video__btn-group">
+              <button className="main-video__btn-double">
+                <img
+                  className="main-video__btn-expand"
+                  src={ExpandIcon}
+                  alt="expand icon"
+                />
+                <img
+                  className="main-video__btn-volume"
+                  src={VolumeIcon}
+                  alt="volume icon"
+                />
               </button>
-              <button className="mainVideo__videoBtn">
-                <img src={VolumeIcon} alt="volume icon" />
-              </button>
+              {/* <button className="mainVideo__btn-double">
+                
+              </button> */}
             </div>
           </div>
           <video
             // controls
-            className="mainVideo__video"
+            className="main-video__video"
             poster={image}
-            src={video}
+            src={image}
           ></video>
         </div>
       </>

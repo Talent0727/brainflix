@@ -6,51 +6,52 @@
     color: $black;
     font-size: 1.5rem;
     line-height: 2rem;
-    margin: 1.5rem 0 1rem 1rem;
+    margin: 1.5rem 0 0 1rem;
   }
   &__subtitle {
     @include flex-column;
-    border-bottom: 0.094rem solid $mercury;
+    border-bottom: 0.07rem solid $mercury;
     margin: 0 1rem;
   }
-  &__subtitleTopRow {
+  &__subtitle-topRow {
     @include flex-row;
     justify-content: flex-start;
     align-items: center;
     margin: 1rem 0;
   }
-  &__subtitleChannel {
+  &__subtitle-channel {
     @include h3-subheader;
     color: $black;
     margin-right: 0.5rem;
   }
-  &__subtitleDate {
+  &__subtitle-date {
     @include h4-paragraph;
     color: $silver;
     align-self: flex-end;
   }
-  &__subtitleBottomRow {
+  &__subtitle-bottomRow {
     @include flex-row;
     justify-content: flex-start;
     align-items: center;
     margin: 1rem 0 1.5rem 0;
   }
-  &__subtitleIcon {
+  &__subtitle-icon {
     margin-right: 0.5rem;
   }
-  &__subtitleNumbers {
+  &__subtitle-numbers {
     @include h4-paragraph;
     color: $black;
     margin-right: 1.1rem;
   }
   &__text {
     @include h4-lists;
+    font-size: 0.797rem;
     // font-family: "AvenirDemi";
     color: $black;
     letter-spacing: -0.019rem;
     margin: 1.5rem 1rem;
   }
-  &__numberOfComments {
+  &__numberomments {
     @include h3-subheader;
     color: $black;
     margin-left: 1rem;
@@ -61,29 +62,29 @@
   .description {
     &__title {
       @include h1-header-desktop;
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
+      margin: 1.5rem 1.5rem 1rem 1.5rem;
     }
     &__subtitle {
       @include flex-row;
       justify-content: space-between;
       align-items: baseline;
       margin-left: 1.5rem;
+      margin-right: 1.5rem;
     }
-    &__subtitleTopRow {
+    &__subtitle-topRow {
       margin-top: 0;
     }
-    &__subtitleBottomRow {
+    &__subtitle-bottomRow {
       margin-top: 0;
     }
 
-    &__subtitleChannel {
+    &__subtitle-channel {
       @include h3-subheader;
     }
-    &__subtitleIcon {
+    &__subtitle-icon {
       margin-left: 1.5rem;
     }
-    &__subtitleNumbers {
+    &__subtitle-numbers {
       margin: 0;
     }
     &__text {
@@ -92,7 +93,7 @@
       // font-family: "AvenirRegular";
       margin-left: 1.5rem;
     }
-    &__numberOfComments {
+    &__numberomments {
       margin-left: 1.5rem;
     }
   }
@@ -100,22 +101,52 @@
 
 @include desktop {
   .description {
+    margin-left: 10rem;
+    margin-right: 0;
+    margin-top: 1.25rem;
     &__title {
-      font-size: 2.5rem;
-      margin-left: 0;
       margin-right: 0;
     }
     &__subtitle {
-      margin-left: 0;
       margin-right: 0;
-      padding-right: 2.7rem;
+    }
+    &__subtitle-bottomRow {
+      margin-right: 1.5rem;
+    }
+  }
+}
+
+@include wide {
+  .description {
+    margin-right: 0;
+    padding-left: 0;
+    margin-left: 10rem;
+
+    &__title {
+      font-size: 2.5rem;
+      padding-left: 0;
+      margin-right: 0;
+      margin-left: 0;
+    }
+    &__subtitle {
+      // margin-left: 10rem;
+      margin-right: 0;
+      margin-left: 0;
+      // padding-right: 2.7rem;
+    }
+    &__subtitle-bottomRow {
+      margin-right: 2rem;
     }
     &__text {
+      // margin-left: 10rem;
+      margin-right: 0;
       margin-left: 0;
       line-height: 1.5rem;
     }
-    &__numberOfComments {
+    &__numberomments {
+      // margin-left: 10rem;
       margin-left: 0;
+      margin-right: 0;
     }
   }
 }

@@ -10,5 +10,10 @@ export default function VideoList({ videos, match }) {
     </Link>
   ));
 
-  return <ul className="videos">NEXT VIDEO{videoSection}</ul>;
+  return (
+    <ul className="videos">
+      <p className="videos__title">NEXT VIDEO</p>
+      {videoSection}
+    </ul>
+  );
 }

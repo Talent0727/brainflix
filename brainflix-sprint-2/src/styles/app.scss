@@ -22,10 +22,14 @@ body {
   width: 100%;
 }
 
+a {
+  text-decoration: none;
+}
+
 @include desktop {
   .bottom {
     @include flex-row;
-    justify-content: center;
+    justify-content: space-evenly;
   }
 }
 

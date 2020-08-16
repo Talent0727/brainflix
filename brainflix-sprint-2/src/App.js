@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Route, Redirect, useParams, Switch } from "react-router-dom";
 import VideoPlayer from "./components/VideoPlayer";
 import Description from "./components/Description";
 import NewComment from "./components/CommentsSection/NewComment";
 import CommentsSection from "./components/CommentsSection/CommentsSection";
 import VideoList from "./components/VideoList/VideoList";
 import { API_KEY } from "./env/env_variables";
-import { v4 as uuidv4 } from "uuid";
 import "./styles/app.css";
 import moment from "moment";
 moment().format();
@@ -42,7 +40,7 @@ class App extends Component {
       }
 
       const { params } = this.props.match;
-      console.log(this.props.match);
+      // console.log(this.props.match);
       const currentVideoID = params.id || data[0].id;
       const filteredVideos = data.filter(
         (video) => video.id !== currentVideoID
@@ -58,9 +56,9 @@ class App extends Component {
   };
 
   searchVideoById = (id) => {
-    console.log("id", id);
+    // console.log("id", id);
     axios.get(`${BASE_URL}/videos/${id}?api_key=${API_KEY}`).then((result) => {
-      console.log(result);
+      // console.log(result);
       this.setState({
         videoDetails: result.data,
       });
@@ -74,7 +72,7 @@ class App extends Component {
         comment
       )
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         this.setState({
           videoDetails: {
             ...this.state.videoDetails,
@@ -109,7 +107,7 @@ class App extends Component {
       return <div> loading </div>;
     }
 
-    console.log(this.state.videoDetails);
+    // console.log(this.state.videoDetails);
     return (
       <div className="App">
         <VideoPlayer
@@ -118,7 +116,7 @@ class App extends Component {
           searchVideoById={this.searchVideoById}
         />
         <div className="bottom">
-          <div className="descriptionAndForm">
+          <div className="bottom__descriptionForm">
             <Description mainVideo={this.state.videoDetails} />
             <NewComment
               error={this.state.error}
@@ -128,7 +126,6 @@ class App extends Component {
           </div>
           <VideoList {...this.props} videos={this.state.videos} />
         </div>
-        >
       </div>
     );
   }
