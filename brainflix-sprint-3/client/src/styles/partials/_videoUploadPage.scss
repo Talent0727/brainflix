@@ -1,0 +1,154 @@
+.videoUpload {
+  @include flex-column;
+  border-top: 0.01rem solid $mercury;
+  &__title {
+    font-size: 1.5rem;
+    font-family: "AvenirBold";
+    color: $black;
+    margin: 1.5rem 0 0 1rem;
+  }
+  &__image-label {
+    @include label-style;
+    margin: 1.5rem 0 0.5rem 1rem;
+  }
+  &__image {
+    width: 18rem;
+    height: 9.563rem;
+    border-radius: 0.313rem;
+    margin: 0 1rem;
+  }
+  &__form {
+    @include flex-column;
+  }
+  &__title-label {
+    @include label-style;
+    margin: 1.5rem 0 0.5rem 1rem;
+  }
+  &__title-input {
+    @include input-style;
+    height: 2.5rem;
+    min-width: 16.5rem;
+    padding-left: 1rem;
+    margin: 0 1rem 1.5rem 1rem;
+  }
+  &__description-label {
+    @include label-style;
+    margin: 1.5rem 0 0.5rem 1rem;
+  }
+  &__description-input {
+    @include input-style;
+    height: 8.938rem;
+    min-width: 15.5rem;
+    padding: 0.5rem 1rem;
+    margin: 0 1rem 1.5rem 1rem;
+  }
+  &__buttons {
+    @include flex-column;
+    flex-direction: column-reverse;
+  }
+  &__btn-publish {
+    @include button-style;
+    min-width: 17.5rem;
+    margin: 1.5rem 1rem 0 1rem;
+  }
+  &__btn-cancel {
+    @include button-style;
+    background-color: white;
+    color: $brainflix-blue-light;
+    min-width: 17.5rem;
+    margin: 1rem;
+  }
+}
+
+@include tablet {
+  .videoUpload {
+    &__title {
+      @include h1-header-desktop;
+      border-bottom: 0.07rem solid $mercury;
+      margin: 2.5rem 1.5rem 0 1.5rem;
+      padding-bottom: 2rem;
+    }
+    &__main-container {
+      border-bottom: 0.07rem solid $mercury;
+      margin: 0 1.5rem;
+      padding-bottom: 2.5rem;
+    }
+    &__image-label {
+      @include label-style;
+      margin: 2.5rem 0 0.5rem 0;
+    }
+    &__image {
+      width: 21.5rem;
+      height: 11.438rem;
+      margin: 0 0 0.5rem 0;
+    }
+    &__title-label {
+      margin: 2rem 0 0.5rem 0;
+    }
+    &__title-input {
+      margin: 0 0 0.5rem 0;
+    }
+    &__description-label {
+      margin: 1rem 0 0.5rem 0;
+    }
+    &__description-input {
+      margin: 0 0 0.5rem 0;
+    }
+    &__buttons {
+      @include flex-row;
+      justify-content: center;
+      align-items: center;
+      align-self: flex-end;
+      margin: 2.5rem 1.5rem 0 1.5rem;
+    }
+    &__btn-publish {
+      width: 10rem;
+      margin: 0;
+    }
+    &__btn-cancel {
+      width: 9.25rem;
+      margin: 0;
+    }
+  }
+}
+
+@include desktop {
+  .videoUpload {
+    &__title {
+      margin-left: 10rem;
+      margin-right: 10rem;
+    }
+    &__main-container {
+      margin-left: 10rem;
+      margin-right: 10rem;
+      margin-top: 2.5rem;
+      @include flex-row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    &__image-label {
+      margin: 0 0 0.5rem 0;
+    }
+    &__image {
+      width: 21.5rem;
+      height: 11.438rem;
+      margin: 0 1.5rem 0 0;
+    }
+    &__form {
+      width: 90%;
+    }
+    &__title-label {
+      margin: 0 0 0.5rem 0;
+    }
+    &__title-input {
+      margin: 0 0 0.5rem 0;
+    }
+
+    &__description-input {
+      height: 4.5rem;
+    }
+    &__buttons {
+      margin-right: 10rem;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.comments {
+  // border-top: 0.07rem solid $mercury;
+  // margin: 0 1rem;
+  padding: 0 1rem;
+  &__comment {
+    @include flex-row;
+    margin-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.07rem solid $mercury;
+  }
+  &__comment-image {
+    background-color: $silver;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+  }
+  &__comment-data {
+    // width: 14.75rem;
+    width: 76%;
+    margin-left: 1rem;
+  }
+  &__comment-title {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+  }
+  &__comment-author {
+    @include h3-subheader;
+  }
+  &__comment-date {
+    @include h4-lists-mob;
+    font-size: 0.9rem;
+    color: $silver;
+  }
+  &__comment-text {
+    font-size: 0.9rem;
+  }
+}
+
+@include tablet {
+  .comments {
+    padding: 0 1.5rem;
+    &__comment-image {
+      height: 3.125rem;
+      width: 3.125rem;
+    }
+    &__comment-title {
+      @include flex-row;
+      justify-content: flex-start;
+      align-items: baseline;
+      margin-bottom: 1rem;
+    }
+    &__comment-author {
+      margin-right: 1.5rem;
+    }
+    &__comment-data {
+      width: 85%;
+    }
+    &__comment-text {
+      line-height: 1.3rem;
+    }
+  }
+}
+
+@include desktop {
+  .comments {
+    margin-left: 10rem;
+    padding-right: 0;
+  }
+}
+
+@include wide {
+  .comments {
+    margin-left: 10rem;
+    padding-right: 0;
+    padding-left: 0;
+
+    &__comment-title {
+      margin-bottom: 0.5rem;
+    }
+  }
+}

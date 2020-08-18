@@ -1,0 +1,99 @@
+.new-comment {
+  @include flex-column;
+  justify-content: flex-start;
+  margin: 1.5rem 0 1.5rem 0;
+  padding: 0 1rem;
+
+  &__container {
+    @include flex-row;
+    padding-bottom: 1.5rem;
+    border-bottom: 0.07rem solid $mercury;
+  }
+  &__avi-photo {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: left center;
+  }
+  &__form {
+    @include flex-column;
+    margin-left: 1rem;
+    width: 76%;
+  }
+  &__label {
+    @include h5-labels;
+    align-self: flex-start;
+    font-family: "AvenirDemi";
+    color: $silver;
+    letter-spacing: -0.019rem;
+    margin-left: 4.2rem;
+  }
+  &__input {
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    height: 5.375rem;
+    border: 0.125rem solid $mercury;
+    background-color: $alabaster;
+    border-radius: 0.313rem;
+    margin-bottom: 1rem;
+  }
+  &__btn {
+    @include button-style;
+    width: 13.75rem;
+  }
+}
+
+@include tablet {
+  .new-comment {
+    padding: 0 1.5rem;
+    padding-bottom: 1.5rem;
+    &__container {
+      padding-bottom: 0.5rem;
+    }
+    &__avi-photo {
+      width: 3.2rem;
+      height: 3.2rem;
+      margin-left: 0;
+    }
+    &__form {
+      @include flex-row;
+    }
+    &__label {
+      margin-left: 4.2rem;
+    }
+    &__input {
+      width: 27.5rem;
+      height: 2.5rem;
+      margin-right: 1rem;
+    }
+    &__btn {
+      @include button-style;
+      width: 10rem;
+    }
+  }
+}
+
+@include desktop {
+  .new-comment {
+    margin-left: 10rem;
+    padding-right: 0;
+    &__input {
+      width: 20rem;
+    }
+  }
+}
+
+@include wide {
+  .new-comment {
+    margin-left: 10rem;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    &__form {
+      width: 90%;
+    }
+    &__input {
+      width: 27.5rem;
+    }
+  }
+}

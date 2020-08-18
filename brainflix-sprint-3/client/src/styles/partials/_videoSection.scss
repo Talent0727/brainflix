@@ -1,0 +1,59 @@
+.videos {
+  margin-bottom: 2.5rem;
+  &__title {
+    @include h4-lists-mob;
+    font-family: "AvenirDemi";
+    font-size: 0.87rem;
+    color: $silver;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+
+    // padding: 2.5rem 1rem;
+  }
+  &__video {
+    @include flex-row;
+    color: $black;
+    margin-top: 2.5rem;
+    margin-left: 1rem;
+  }
+  &__video-image {
+    width: 7.5rem;
+    height: 4.375rem;
+    border-radius: 0.313rem;
+    object-fit: cover;
+  }
+  &__video-sideInfo {
+    margin-left: 1rem;
+  }
+  &__video-title {
+    color: $black;
+    margin-bottom: 0.7rem;
+    width: 9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@include tablet {
+  .videos {
+    // padding: 2.5rem 1.5rem;
+    border-left: 0.07rem solid $mercury;
+
+    &__video-title {
+      width: 12.25rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: visible;
+    }
+  }
+}
+
+@include desktop {
+  .videos {
+    width: 31.25rem;
+    margin-right: 10rem;
+  }
+}
