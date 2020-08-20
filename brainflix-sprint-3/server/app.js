@@ -1,16 +1,15 @@
 const express = require("express");
 const app = express();
-const cors = require("cors");
-require("dotenv").config();
-const { PORT, BACKEND_URL } = process.env;
-const videosRoute = require("./routes/videosRoute");
+const fs = require("fs");
 
-// add middleware to help work with req.body
 app.use(express.json());
-// app.use(cors());
-app.use(express.static("public"));
 
-// root url of server
+app.get("/", (req, res) => {
+  res.json({
+    welcome: "Welcome to my API",
+  });
+});
+
 app.get("/videos", (req, res) => {
   loadVideoData((videos) => {
     const sideBarVideos = videos.map((video) => {
@@ -19,7 +18,6 @@ app.get("/videos", (req, res) => {
         title: video.title,
         channel: video.channel,
         image: video.image,
-        description: video.description,
       };
     });
     res.json(sideBarVideos);
@@ -30,7 +28,7 @@ app.get("/videos/:id", (req, res) => {
   const vidId = req.params.id;
   loadVideoData((videos) => {
     const vidIndex = videos.findIndex((vidObj) => vidObj.id === vidId);
-    if (vidIndiex !== -1) {
+    if (vidIndex !== -1) {
       res.json(videos[vidIndex]);
     } else {
       res.status(404).json({ message: `Video with the id ${vidId} not found` });
@@ -38,8 +36,12 @@ app.get("/videos/:id", (req, res) => {
   });
 });
 
-// products endpoint, setup using express.Router()
-app.use("/videos", videosRoute);
+const loadVideoData = (callback) => {
+  fs.readFile("./db/videos.json", (err, data) => {
+    if (err) throw err;
+    const videos = JSON.parse(data);
+    callback(videos);
+  });
+};
 
-// listen, start the application
-app.listen(PORT, () => console.log(`listening at: ${BACKEND_URL}:${PORT}`));
+app.listen(5000, console.log("http://localhost:5000"));
