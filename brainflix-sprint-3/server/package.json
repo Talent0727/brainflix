@@ -4,12 +4,21 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "client": "npm start --prefix ../client",
+    "server": "nodemon server.js"
   },
   "author": "Andre Bruto",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "moment": "^2.27.0",
+    "uuidv4": "^6.2.3"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.4"
   }
 }
