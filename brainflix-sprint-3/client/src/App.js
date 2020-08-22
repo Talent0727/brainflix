@@ -5,13 +5,13 @@ import Description from "./components/Description";
 import NewComment from "./components/CommentsSection/NewComment";
 import CommentsSection from "./components/CommentsSection/CommentsSection";
 import VideoList from "./components/VideoList/VideoList";
-import { API_KEY } from "./env/env_variables";
+// import { API_KEY } from "./env/env_variables";
 import "./styles/app.css";
 import moment from "moment";
 moment().format();
 
-const BASE_URL = "https://project-2-api.herokuapp.com";
-const VIDEO_URL = `${BASE_URL}/videos/?api_key=${API_KEY}`;
+const BASE_URL = "http://localhost:5000";
+const VIDEO_URL = `${BASE_URL}/videos`;
 
 class App extends Component {
   state = {
@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log(this.props.match);
+    console.log("component did update", this.props.match);
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.loadData();
       window.scrollTo(0, 0);
@@ -57,8 +57,8 @@ class App extends Component {
 
   searchVideoById = (id) => {
     // console.log("id", id);
-    axios.get(`${BASE_URL}/videos/${id}?api_key=${API_KEY}`).then((result) => {
-      // console.log(result);
+    axios.get(`${BASE_URL}/videos/${id}`).then((result) => {
+      console.log("search video by id", result);
       this.setState({
         videoDetails: result.data,
       });
@@ -67,12 +67,9 @@ class App extends Component {
 
   postNewComment = (comment) => {
     axios
-      .post(
-        `${BASE_URL}/videos/${this.state.currentID}/comments?api_key=${API_KEY}`,
-        comment
-      )
+      .post(`${BASE_URL}/videos/${this.state.currentID}/comments`, comment)
       .then((result) => {
-        // console.log(result);
+        console.log("post new comment", result);
         this.setState({
           videoDetails: {
             ...this.state.videoDetails,
