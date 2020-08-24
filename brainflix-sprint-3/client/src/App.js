@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log("component did update", this.props.match);
+    // console.log("component did update", this.props.match);
     if (prevProps.match.params.id !== this.props.match.params.id) {
       this.loadData();
       window.scrollTo(0, 0);
@@ -39,9 +39,12 @@ class App extends Component {
         return;
       }
 
+      // console.log(data);
+
       const { params } = this.props.match;
       // console.log(this.props.match);
       const currentVideoID = params.id || data[0].id;
+      // console.log(currentVideoID);
       const filteredVideos = data.filter(
         (video) => video.id !== currentVideoID
       );
@@ -58,7 +61,7 @@ class App extends Component {
   searchVideoById = (id) => {
     // console.log("id", id);
     axios.get(`${BASE_URL}/videos/${id}`).then((result) => {
-      console.log("search video by id", result);
+      // console.log("search video by id", result.data);
       this.setState({
         videoDetails: result.data,
       });
@@ -69,11 +72,11 @@ class App extends Component {
     axios
       .post(`${BASE_URL}/videos/${this.state.currentID}/comments`, comment)
       .then((result) => {
-        console.log("post new comment", result);
+        // console.log("post new comment", result);
         this.setState({
           videoDetails: {
             ...this.state.videoDetails,
-            comments: [...this.state.videoDetails.comments, result.data],
+            comments: [result.data, ...this.state.videoDetails.comments],
           },
         });
       })
